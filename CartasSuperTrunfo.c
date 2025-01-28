@@ -1,22 +1,42 @@
 #include <stdio.h>
 
-// Desafio Super Trunfo - Países
-// Tema 1 - Cadastro das Cartas
-// Este código inicial serve como base para o desenvolvimento do sistema de cadastro de cartas de cidades.
-// Siga os comentários para implementar cada parte do desafio.
-//Teste larissa
-
 int main() {
-    // Sugestão: Defina variáveis separadas para cada atributo da cidade.
-    // Exemplos de atributos: código da cidade, nome, população, área, PIB, número de pontos turísticos.
+    char codigo[4]; // Código da cidade (exemplo: A01, A02)
+    int populacao;
+    float area, pib;
+    int pontos_turisticos;
+    char continuar;
     
-    // Cadastro das Cartas:
-    // Sugestão: Utilize a função scanf para capturar as entradas do usuário para cada atributo.
-    // Solicite ao usuário que insira as informações de cada cidade, como o código, nome, população, área, etc.
-    
-    // Exibição dos Dados das Cartas:
-    // Sugestão: Utilize a função printf para exibir as informações das cartas cadastradas de forma clara e organizada.
-    // Exiba os valores inseridos para cada atributo da cidade, um por linha.
+    // Laço principal para cadastrar cidades
+    do {
+        printf("Digite o código da cidade (exemplo: A01, B02): ");
+        scanf("%s", codigo);
+
+        printf("Digite a população da cidade: ");
+        scanf("%d", &populacao);
+
+        printf("Digite a área da cidade (em km²): ");
+        scanf("%f", &area);
+
+        printf("Digite o PIB da cidade (em bilhões de R$): ");
+        scanf("%f", &pib);
+
+        printf("Digite o número de pontos turísticos da cidade: ");
+        scanf("%d", &pontos_turisticos);
+
+        // Exibe os dados cadastrados
+        printf("\nDados cadastrados:\n");
+        printf("Código da cidade: %s\n", codigo);
+        printf("População: %d\n", populacao);
+        printf("Área: %.2f km²\n", area);
+        printf("PIB: R$%.2f bilhões\n", pib);
+        printf("Pontos turísticos: %d\n", pontos_turisticos);
+        printf("-------------------------------\n");
+
+        // Pergunta se o usuário quer cadastrar outra cidade
+        printf("Deseja cadastrar outra cidade? (s/n): ");
+        scanf(" %c", &continuar); // O espaço antes de %c é para limpar o buffer
+    } while (continuar == 's' || continuar == 'S');
 
     return 0;
 }
